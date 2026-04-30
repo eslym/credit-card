@@ -47,8 +47,9 @@ class CardExpirationDate implements Rule
 
             // to avoid month overflow
             // eg: Carbon::createFromFormat('2020', 'my')->format('my') --> '0821'
-            if($date->format($this->format) !== $value) {
+            if ($date->format($this->format) !== $value) {
                 $this->message = static::MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID;
+
                 return false;
             }
 
